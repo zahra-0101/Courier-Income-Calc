@@ -37,5 +37,8 @@ Represents a deduction from income for a courier, independent of trips.
     ### Usage
 			python generate_fake_data.py
 
+3. Run test
+	python manage.py test courier
 
-pipenv lock -r > requirements.txt
+<!-- pipenv lock -r > requirements.txt -->
+
