@@ -1,6 +1,12 @@
 from rest_framework import generics
 from .models import Courier, Trip, IncomeIncrease, IncomeDeduction, DailySalary
-from .serializers import CourierSerializer, TripSerializer, IncomeIncreaseSerializer, IncomeDeductionSerializer, DailySalarySerializer
+from .serializers import (
+    CourierSerializer,
+    TripSerializer,
+    IncomeIncreaseSerializer,
+    IncomeDeductionSerializer,
+    DailySalarySerializer,
+)
 
 
 class CourierListCreateView(generics.ListCreateAPIView):
