@@ -28,18 +28,23 @@ Represents a deduction from income for a courier, independent of trips.
 
 2. Apply database migrations:
 	```bash
-	python manage.py makemigrations
 	python manage.py migrate
 	```
 
 3. Generate Fake Data
-
-    ### Usage
-			python generate_fake_data.py
+	```bash
+	python generate_fake_data.py
+	```
 
 3. Run test
 	python manage.py test courier
-
+	```bash
+	python manage.py test
+	```
+4. Run server
+	```bash
+	python manage.py runserver
+	```
 
 # Project API Documentation
 
