@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'courier',
 
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

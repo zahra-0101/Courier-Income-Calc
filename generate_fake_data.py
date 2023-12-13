@@ -1,19 +1,20 @@
+from courier.models import Courier, Trip, IncomeIncrease, IncomeDeduction
 import os
 import django
 import random
 from faker import Faker
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miare.settings")  
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miare.settings")
 django.setup()
 
-from courier.models import Courier, Trip, IncomeIncrease, IncomeDeduction
 
 fake = Faker()
 
 
 def generate_fake_data(num_couriers=10, num_trips=50, num_increases=20, num_deductions=10):
     # Generate fake couriers
-    couriers = [Courier.objects.create(name=fake.name()) for _ in range(num_couriers)]
+    couriers = [Courier.objects.create(name=fake.name())
+                for _ in range(num_couriers)]
 
     # Generate fake trips
     for _ in range(num_trips):
@@ -37,7 +38,7 @@ def generate_fake_data(num_couriers=10, num_trips=50, num_increases=20, num_dedu
         courier = random.choice(couriers)
         IncomeDeduction.objects.create(
             courier=courier,
-            income=random.uniform(-1, -50),
+            income=random.uniform(-50, -1),
             reason=fake.text(),
         )
 

@@ -55,9 +55,9 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = 110
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is created after a trip.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is created after a trip.",
         )
 
     def test_create_total_salary_after_income_increase(self):
@@ -68,9 +68,9 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = 50
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is created after income increase.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is created after income increase.",
         )
 
     def test_create_total_salary_after_income_deduction(self):
@@ -81,9 +81,9 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = -120
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is created after income deduction.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is created after income deduction.",
         )
 
     def test_update_trip_total_salary(self):
@@ -94,9 +94,9 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = 220
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is updated after a trip.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is updated after a trip.",
         )
 
     def test_update_total_salary_after_income_increase(self):
@@ -107,9 +107,9 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = 170
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is updated after income increase.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is updated after income increase.",
         )
 
     def test_update_total_salary_after_income_deduction(self):
@@ -120,7 +120,7 @@ class DailySalaryTestCase(TestCase):
         )
         expected_total_salary = 90
         self.assertEqual(
-            total_salary.total_salary,
+            total_salary.salary,
             expected_total_salary,
-            f"Expected total salary to be {expected_total_salary}, but got {total_salary.total_salary} when a new instance is updated after income deduction.",
+            f"Expected total salary to be {expected_total_salary}, but got {total_salary.salary} when a new instance is updated after income deduction.",
         )

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Courier, Trip, IncomeIncrease, IncomeDeduction, DailySalary
+from .models import Courier, Trip, IncomeIncrease, IncomeDeduction, DailySalary, WeeklySalary
 
 
 class CourierSerializer(serializers.ModelSerializer):
@@ -29,4 +29,12 @@ class IncomeDeductionSerializer(serializers.ModelSerializer):
 class DailySalarySerializer(serializers.ModelSerializer):
     class Meta:
         model = DailySalary
+        fields = '__all__'
+
+
+class CustomWeeklySalarySerializer(serializers.ModelSerializer):
+    courier = CourierSerializer()
+
+    class Meta:
+        model = WeeklySalary
         fields = '__all__'
