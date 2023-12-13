@@ -1,10 +1,10 @@
 from django.urls import path
 from .views import (
     CourierListCreateView,
+    DailySalaryViewSet,
     TripListCreateView,
     IncomeIncreaseListCreateView,
     IncomeDeductionListCreateView,
-    DailySalaryListCreateView,
     WeeklySalaryViewSet
 )
 
@@ -24,7 +24,7 @@ urlpatterns = [
     ),
     path(
         "daily-salaries/",
-        DailySalaryListCreateView.as_view(),
+        DailySalaryViewSet.as_view(),
         name="daily-salary-list-create",
     ),
     path('weekly-salary/', WeeklySalaryViewSet.as_view(),

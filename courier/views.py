@@ -45,7 +45,7 @@ class IncomeDeductionListCreateView(generics.ListCreateAPIView):
     serializer_class = IncomeDeductionSerializer
 
 
-class DailySalaryListCreateView(generics.ListAPIView):
+class DailySalaryViewSet(generics.ListAPIView):
     # TODO: permission_classes
     serializer_class = CustomDailySalarySerializer
     queryset = DailySalary.objects.all()
