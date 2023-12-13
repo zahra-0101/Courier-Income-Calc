@@ -20,7 +20,7 @@ from .serializers import (
     TripSerializer,
     IncomeIncreaseSerializer,
     IncomeDeductionSerializer,
-    DailySalarySerializer,
+    CustomDailySalarySerializer,
 )
 
 
@@ -51,7 +51,7 @@ class IncomeDeductionListCreateView(generics.ListCreateAPIView):
 class DailySalaryListCreateView(generics.ListCreateAPIView):
     # TODO: permission_classes
     queryset = DailySalary.objects.all()
-    serializer_class = DailySalarySerializer
+    serializer_class = CustomDailySalarySerializer
 
 
 class WeeklySalaryViewSet(generics.ListAPIView):

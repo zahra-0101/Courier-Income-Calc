@@ -26,7 +26,9 @@ class IncomeDeductionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class DailySalarySerializer(serializers.ModelSerializer):
+class CustomDailySalarySerializer(serializers.ModelSerializer):
+    courier = CourierSerializer()
+
     class Meta:
         model = DailySalary
         fields = '__all__'
