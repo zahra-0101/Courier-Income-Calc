@@ -1,11 +1,8 @@
-from rest_framework.response import Response
-from datetime import datetime, timedelta
-from rest_framework import generics, viewsets, filters
+from rest_framework import generics
 import django_filters.rest_framework
 
-from courier.filters import WeeklySalaryFilter
+from courier.filters import DailySalaryFilter, WeeklySalaryFilter
 
-# from courier.filters import WeeklySalaryFilter
 from .models import (
     Courier,
     Trip,
@@ -48,10 +45,12 @@ class IncomeDeductionListCreateView(generics.ListCreateAPIView):
     serializer_class = IncomeDeductionSerializer
 
 
-class DailySalaryListCreateView(generics.ListCreateAPIView):
+class DailySalaryListCreateView(generics.ListAPIView):
     # TODO: permission_classes
-    queryset = DailySalary.objects.all()
     serializer_class = CustomDailySalarySerializer
+    queryset = DailySalary.objects.all()
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_class = DailySalaryFilter
 
 
 class WeeklySalaryViewSet(generics.ListAPIView):

@@ -1,20 +1,20 @@
 from courier.models import Courier, Trip, IncomeIncrease, IncomeDeduction
 import os
-import django
 import random
 from faker import Faker
+from django.conf import settings
 
+settings.configure()
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miare.settings")
-django.setup()
-
 
 fake = Faker()
 
 
-def generate_fake_data(num_couriers=10, num_trips=50, num_increases=20, num_deductions=10):
+def generate_fake_data(
+    num_couriers=10, num_trips=50, num_increases=20, num_deductions=10
+):
     # Generate fake couriers
-    couriers = [Courier.objects.create(name=fake.name())
-                for _ in range(num_couriers)]
+    couriers = [Courier.objects.create(name=fake.name()) for _ in range(num_couriers)]
 
     # Generate fake trips
     for _ in range(num_trips):
